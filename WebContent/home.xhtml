@@ -2,7 +2,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 	<title>Home</title>
@@ -16,6 +17,29 @@
 	</div>
 
 	<div class="conteudo2">
+
+
+		<h:form>
+			<p:growl autoUpdate="true" />
+
+			<p:panelMenu style="width:300px">
+				<p:submenu label="Cadastro">
+					<p:menuitem value="Incluir Pedido" action="#{homeBean.cadastrarPedido}"
+						icon="ui-icon-disk" />
+					<p:menuitem value="Cliente" 
+						icon="ui-icon-arrowrefresh-1-w" />
+					<p:menuitem value="Cliente" 
+						icon="ui-icon-arrowrefresh-1-w" />
+					<p:menuitem value="Produto" 
+						icon="ui-icon-arrowrefresh-1-w" />
+					<p:menuitem value="Transportadora" 
+						icon="ui-icon-arrowrefresh-1-w" />
+					<p:menuitem value="Vendedor" 
+						icon="ui-icon-arrowrefresh-1-w" />			
+				</p:submenu>
+			</p:panelMenu>
+		</h:form>
+
 
 		<h:form>
 			<h:commandButton value="Cadastrar Pedido" action="#{homeBean.cadastrarPedido}"/>
