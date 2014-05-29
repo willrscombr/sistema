@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Cadastro de Produto</title>
+	<h:outputStylesheet library="css" name="reset.css"/>
+	<h:outputStylesheet library="css" name="estilo.css"/>
+</h:head>
+<h:body>
+	
+	<div class="cabecalho2">
+		<h2>Pedidos WEB</h2>
+	</div>
+
+	<div class="conteudo2">
+		
+		<h:form id="formProduto">
+			<h:panelGrid columns="2" >
+			
+				<p:outputLabel value="Descrição" for="descricao"/>
+				<p:inputText id="descricao" value="#{produtoBean.produto.descricao}" />
+			
+				<p:outputLabel value="Valor" for="valor"/>
+				<p:inputText id="valor" value="#{produtoBean.produto.valor}" />
+			
+				<p:commandButton action="#{produtoBean.salvar}" value="Salvar" update=":formProduto :panelTabela"/>
+				
+			</h:panelGrid>
+			
+		</h:form>
+	
+		<h:panelGroup id="panelTabela">
+			<p:dataTable var="p" value="#{produtoBean.produtos}">
+
+				<p:column headerText="Descrição">
+					<h:outputText value="#{p.descricao}" />
+				</p:column>
+
+				<p:column headerText="Valor">
+					<h:outputText value="#{p.valor}" />
+				</p:column>
+
+			</p:dataTable>
+		</h:panelGroup>
+	
+	</div>
+
+
+	<div class="rodape2">
+		Todos os direitos reservados - Jorge Luis de Oliveira Barbosa
+	</div>	
+
+</h:body>
+</html>
